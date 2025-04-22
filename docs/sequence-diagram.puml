@@ -1,0 +1,15 @@
+@startuml
+actor User
+participant "Home View" as View
+participant "BenchmarkForm" as Form
+participant "BenchmarkResult" as Model
+
+User -> View: Access Home Page
+View -> Form: Display empty BenchmarkForm
+User -> View: Submit form (POST)
+View -> Form: Validate form
+Form --> View: Valid
+View -> Model: Create BenchmarkResult\n(set user, calculate score)
+Model --> View: Save Benchmark
+View -> User: Redirect to Leaderboard
+@enduml

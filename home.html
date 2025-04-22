@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Welcome to BenchIt!</h2>
+<p>Your performance benchmarking platform. Here you can compare your device's performance with others!</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Run Benchmark</button>
+</form>
+<p><a href="{% url 'leaderboard' %}">View Leaderboard</a></p>
+{% endblock %}

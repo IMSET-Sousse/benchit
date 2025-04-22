@@ -1,0 +1,12 @@
+@startuml
+actor User
+
+User --> (Register)
+User --> (Login)
+User --> (Submit Benchmark)
+User --> (View Leaderboard)
+User --> (Logout)
+
+(Login) --> (Access Home)
+(Submit Benchmark) --> (Calculate Score)
+@enduml
